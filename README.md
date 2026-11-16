@@ -27,7 +27,7 @@ Supabase server settings: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_BUCK
 4. Create a service account in Firebase Project Settings → Service Accounts; store its JSON only in Vercel as FIREBASE_SERVICE_ACCOUNT_JSON.
 5. Deploy the Vercel preview with the environment variables.
 6. Create your owner login in Firebase Authentication.
-7. Call POST https://YOUR_DOMAIN/api/bootstrap-owner with header x-bootstrap-secret: YOUR_SECRET and JSON body {"email":"OWNER_EMAIL"}.
+7. Open https://YOUR_DOMAIN/bootstrap.html, enter the owner email and temporary bootstrap secret, then submit.
 8. Remove TORANEX_BOOTSTRAP_SECRET from Vercel and redeploy immediately after successful bootstrap.
 9. Publish firestore.rules in Firebase Console → Firestore → Rules.
 
