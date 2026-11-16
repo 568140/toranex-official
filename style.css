@@ -135,3 +135,10 @@ body.home-v2{background:#fff;color:var(--ink);font-family:Alexandria,Arial,sans-
 .device-base{height:13px;width:112%;margin-left:-6%;background:linear-gradient(#eaf2fc,#7b8da5 45%,#25354d);clip-path:polygon(4% 0,96% 0,100% 100%,0 100%);border-radius:0 0 12px 12px}
 @media(max-width:1050px){.hero-content{grid-template-columns:minmax(0,1fr) minmax(190px,250px) 185px}.device-screen{height:145px}.device-screen img{width:52px;height:52px}.device-screen strong{font-size:19px}}
 @media(max-width:700px){.hero-content{grid-template-columns:1fr;gap:14px}.hero-device{display:none}.hero-photo{background-position:center,58% center}.hero-founder{max-width:100%}}
+
+/* Final hero composition uses the exact supplied reference artwork */
+.hero-photo{background-image:linear-gradient(90deg,#04142f 0%,#04142f95 28%,#04142f10 57%,#04142f75 100%),url("assets/hero-sanaa-office.webp");background-position:center,center 50%;background-size:cover}
+.hero-content{grid-template-columns:minmax(0,1fr) 230px}
+.hero-device{display:none}
+@media(max-width:1050px){.hero-content{grid-template-columns:minmax(0,1fr) 185px}}
+@media(max-width:700px){.hero-content{grid-template-columns:1fr}.hero-photo{background-position:center,center center}}
