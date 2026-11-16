@@ -1,32 +1,53 @@
-# TORANEX V2
+# TORANEX V2 — Corporate website + CMS
 
-Arabic-first responsive portfolio and corporate website for TORANEX, led by Tawfiq Al-Junaid. Visual direction: warm ivory, charcoal, forest green and muted copper; editorial typography and restrained layout rather than generic AI gradients.
+Arabic RTL website and portfolio for TORANEX Software & Design, founded by Tawfiq Al-Junaid (Sanaa, Al-Jarraf, Yemen).
 
-## Public website
-- index.html, about.html, services.html, portfolio.html, contact.html.
-- Responsive Arabic RTL layout and mobile navigation.
-- Portfolio page includes verified Vercel account projects plus previously shared public links; unverified descriptions are marked as pending.
-- project-catalog.js can replace the static portfolio cards with published Firestore project records after Firebase is configured and the seed data is imported.
+## Included
+- Public pages: home, about, services, portfolio and contact.
+- Editorial design: warm ivory, charcoal, forest green and muted copper.
+- Ten initial portfolio entries and Firestore live portfolio catalog.
+- Firebase email/password authentication with server-side Firebase Admin SDK authorization.
+- Admin modules: projects CRUD, services CRUD, contact inbox, company profile/social links, SEO settings, media library, audit log.
+- Contact form saved to Firestore with input validation, honeypot and per-IP rate limiting.
+- Supabase Storage uploads through a server endpoint; service-role key remains server-side.
+- Firestore rules deny browser-side writes.
+- One-time owner bootstrap protected by a Vercel environment secret.
 
-## Admin foundation
-- admin.html, admin.js, admin.css: Firebase email/password sign-in, allowlisted admin-document check, project create/update/delete, seed import from projects.json, and inbox read UI.
-- firebase-config.js: public Firebase Web App configuration placeholders.
-- firestore.rules: starter security rules.
+## Vercel environment variables
+Set these in Project → Settings → Environment Variables:
+Firebase public app: FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_APP_ID.
+Firebase Admin server secret: FIREBASE_SERVICE_ACCOUNT_JSON (complete service-account JSON in one value).
+Owner setup: TORANEX_BOOTSTRAP_SECRET (long random value); RATE_LIMIT_SALT (long random value).
+Supabase server settings: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_BUCKET=toranex-media.
 
-## Firebase activation (required before admin use)
-1. Use a Firebase project owned by TORANEX and enable Email/Password Authentication.
-2. Create Firestore and publish firestore.rules.
-3. Fill firebase-config.js with Firebase Web App config values (never Admin SDK secrets).
-4. Create the owner's account in Firebase Authentication; copy its UID.
-5. In Firestore, manually create admins/{UID} with active: true and role: OWNER. Client-side users cannot create admin records.
-6. Sign in at /admin.html, then use the button استيراد المشاريع المكتشفة to seed the portfolio documents.
-7. The portfolio page will read published project documents from Firestore; its static project cards remain as a fallback if Firebase is not configured.
+## Firebase setup
+1. Create a Firebase project owned by TORANEX.
+2. Enable Authentication → Email/Password and create Firestore.
+3. Add a Firebase Web App and set its public values in Vercel.
+4. Create a service account in Firebase Project Settings → Service Accounts; store its JSON only in Vercel as FIREBASE_SERVICE_ACCOUNT_JSON.
+5. Deploy the Vercel preview with the environment variables.
+6. Create your owner login in Firebase Authentication.
+7. Call POST https://YOUR_DOMAIN/api/bootstrap-owner with header x-bootstrap-secret: YOUR_SECRET and JSON body {"email":"OWNER_EMAIL"}.
+8. Remove TORANEX_BOOTSTRAP_SECRET from Vercel and redeploy immediately after successful bootstrap.
+9. Publish firestore.rules in Firebase Console → Firestore → Rules.
 
-## Important limits of this slice
-- The contact form prepares a WhatsApp message; it does not currently store messages in Firestore. A server-side endpoint and abuse/rate limiting are required before enabling a persistent public inbox.
-- Supabase media uploads, company profile editor, services editor, SEO editor, audit log, role management, full bilingual content management and a complete media library are follow-up modules.
-- The current wordmark is a typographic placeholder. Replace it with the exact approved TORANEX logo asset before final production release.
-- Verify project titles, screenshots, descriptions and URLs before publishing detailed case studies.
+## Supabase Storage
+1. Create a Storage bucket named toranex-media.
+2. Choose a public bucket only if the uploaded media is intended for public display.
+3. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY only to Vercel environment variables.
+4. The upload endpoint accepts JPEG, PNG, WebP and PDF up to 2.5 MB.
 
-## Safe deployment
-All changes are isolated on redesign/toranex-v2; main is unchanged. Review the Vercel preview before merging.
+## Firestore collections
+admins/{uid}, projects/{id}, services/{id}, siteSettings/main, siteSettings/seo, messages/{id}, media/{id}, auditLogs/{id}, contactRateLimits/{hashed-ip}.
+
+## Deployment
+- Development branch: redesign/toranex-v2.
+- Production branch main remains unchanged.
+- Admin: /admin.html.
+- Configure the Vercel preview environment, review it, then promote the branch only when ready.
+
+## Notes
+- No Firebase or Supabase secrets are committed to Git.
+- The owner bootstrap endpoint closes automatically after the first admin document exists.
+- The wordmark is still a text-based placeholder; replace it with the approved TORANEX logo artwork as an SVG/PNG repository asset before final brand release.
+- Verify case-study details and project screenshots before publishing outcomes or client claims.

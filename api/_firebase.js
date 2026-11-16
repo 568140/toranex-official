@@ -1,0 +1,5 @@
+const admin=require("firebase-admin");
+function get(){if(!admin.apps.length){const s=JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON||"{}");if(!s.project_id)throw Error("Firebase Admin credentials missing");admin.initializeApp({credential:admin.credential.cert(s),projectId:process.env.FIREBASE_PROJECT_ID||s.project_id});}return{admin,db:admin.firestore(),auth:admin.auth()};}
+async function guard(req){const x=get(),h=req.headers.authorization||"",t=h.startsWith("Bearer ")?h.slice(7):"";if(!t)throw Object.assign(Error("يلزم تسجيل الدخول"),{status:401});const u=await x.auth.verifyIdToken(t),a=await x.db.collection("admins").doc(u.uid).get();if(!a.exists||a.data().active!==true)throw Object.assign(Error("الحساب غير مخوّل"),{status:403});return{...x,user:u,record:a.data()};}
+function send(res,status,data){res.status(status).setHeader("Content-Type","application/json; charset=utf-8").end(JSON.stringify(data));}
+module.exports={get,guard,send};
