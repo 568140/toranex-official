@@ -1,43 +1,13 @@
 [
   {
-    "name": "ClinicOS",
-    "category": "الأنظمة والمنصات",
-    "description": "منصة لإدارة عمليات العيادات والمواعيد.",
-    "url": "https://clinic-os-two-tau.vercel.app",
-    "status": "منشور",
-    "order": 1,
-    "published": true,
-    "featured": true
-  },
-  {
     "name": "مفقودات اليمن",
     "category": "المنصات المجتمعية",
     "description": "منصة لبلاغات المفقودات والموجودات.",
     "url": "https://mafqoodat-yemen.vercel.app",
     "status": "منشور",
-    "order": 2,
+    "order": 1,
     "published": true,
     "featured": true
-  },
-  {
-    "name": "رَصْد",
-    "category": "الأدوات الرقمية",
-    "description": "مساعد رقمي لتنظيم العمل الميداني.",
-    "url": "https://rasd-omega.vercel.app",
-    "status": "منشور",
-    "order": 3,
-    "published": true,
-    "featured": true
-  },
-  {
-    "name": "Silver Car",
-    "category": "المواقع التجارية",
-    "description": "موقع لخدمات العناية بالسيارات.",
-    "url": "https://silver-car-qq92.vercel.app",
-    "status": "منشور",
-    "order": 4,
-    "published": true,
-    "featured": false
   },
   {
     "name": "القوة الذهنية للحساب الذهني",
@@ -45,19 +15,19 @@
     "description": "منصة تعليمية للتدريب وإدارة التقدم.",
     "url": "https://aritmetik.vercel.app",
     "status": "منشور",
-    "order": 5,
+    "order": 2,
     "published": true,
-    "featured": false
+    "featured": true
   },
   {
-    "name": "Maroof",
-    "category": "المنتجات الرقمية",
-    "description": "مشروع منشور؛ تفاصيله قيد الاستكمال.",
-    "url": "https://maroof-beta.vercel.app",
+    "name": "TORANEX",
+    "category": "الموقع الرسمي",
+    "description": "الموقع التعريفي لشركة TORANEX للبرمجيات والتصميم.",
+    "url": "/",
     "status": "منشور",
-    "order": 6,
+    "order": 3,
     "published": true,
-    "featured": false
+    "featured": true
   },
   {
     "name": "Moon Clinic",
@@ -65,7 +35,47 @@
     "description": "مشروع منشور؛ تفاصيله قيد الاستكمال.",
     "url": "https://moon-clinic.vercel.app",
     "status": "منشور",
+    "order": 4,
+    "published": true,
+    "featured": true
+  },
+  {
+    "name": "Maroof",
+    "category": "المنتجات الرقمية",
+    "description": "مشروع منشور؛ تفاصيله قيد الاستكمال.",
+    "url": "https://maroof-beta.vercel.app",
+    "status": "منشور",
+    "order": 5,
+    "published": true,
+    "featured": true
+  },
+  {
+    "name": "ClinicOS",
+    "category": "الأنظمة والمنصات",
+    "description": "منصة لإدارة عمليات العيادات والمواعيد.",
+    "url": "https://clinic-os-two-tau.vercel.app",
+    "status": "منشور",
+    "order": 6,
+    "published": true,
+    "featured": false
+  },
+  {
+    "name": "رَصْد",
+    "category": "الأدوات الرقمية",
+    "description": "مساعد رقمي لتنظيم العمل الميداني.",
+    "url": "https://rasd-omega.vercel.app",
+    "status": "منشور",
     "order": 7,
+    "published": true,
+    "featured": false
+  },
+  {
+    "name": "Silver Car",
+    "category": "المواقع التجارية",
+    "description": "موقع لخدمات العناية بالسيارات.",
+    "url": "https://silver-car-qq92.vercel.app",
+    "status": "منشور",
+    "order": 8,
     "published": true,
     "featured": false
   },
@@ -75,7 +85,7 @@
     "description": "مشروع منشور؛ تفاصيله قيد الاستكمال.",
     "url": "https://lamar-1.vercel.app",
     "status": "منشور",
-    "order": 8,
+    "order": 9,
     "published": true,
     "featured": false
   },
@@ -85,7 +95,7 @@
     "description": "مشروع منشور؛ تفاصيله قيد الاستكمال.",
     "url": "https://tomorrow-s-pioneers.vercel.app",
     "status": "منشور",
-    "order": 9,
+    "order": 10,
     "published": true,
     "featured": false
   },
@@ -95,7 +105,7 @@
     "description": "موقع تعريفي طبي سبق مشاركة رابطه؛ يحتاج مراجعة محتواه قبل كتابة دراسة حالة تفصيلية.",
     "url": "https://dr-rehabm.vercel.app",
     "status": "منشور",
-    "order": 10,
+    "order": 11,
     "published": true,
     "featured": false
   }
