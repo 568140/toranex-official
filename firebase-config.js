@@ -1,0 +1,1 @@
+/* Public Firebase configuration is served from Vercel environment variables. */window.TORANEX_CONFIG_URL="/api/config";

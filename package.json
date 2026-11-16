@@ -1,0 +1,12 @@
+{
+  "name": "toranex-official",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "@supabase/supabase-js": "^2.57.0"
+  }
+}
