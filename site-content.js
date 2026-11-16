@@ -14,11 +14,11 @@
    a.textContent=s.phone;
    a.href="tel:"+s.phone.replaceAll(" ","").replaceAll("-","");
   });
-  if(s.location)document.querySelectorAll(".about-grid aside span,.contact-grid>div p:first-of-type").forEach(el=>el.textContent=s.location);
-  if(s.tagline)document.querySelectorAll(".foot-top p").forEach(el=>el.textContent=s.tagline);
+  if(s.location)document.querySelectorAll(".about-grid aside span,.contact-grid>div p:first-of-type,.hero-founder .founder-location,.footer-contact span").forEach(el=>el.textContent=s.location);
+  if(s.tagline)document.querySelectorAll(".foot-top p,.brand small").forEach(el=>el.textContent=s.tagline);
   if(s.whatsapp)document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.href=s.whatsapp);
   if(s.about){
-   document.querySelectorAll(".about-band .about-grid>div:nth-child(2) p:not(.eyebrow)").forEach(el=>el.textContent=s.about);
+   document.querySelectorAll(".about-band .about-grid>div:nth-child(2) p:not(.eyebrow),.about-copy>p:not(.eyebrow)").forEach(el=>el.textContent=s.about);
    if(document.querySelector(".about-cards")&&!document.querySelector("#services-cards")){
     const lead=document.querySelector("main .section .lead");
     if(lead)lead.textContent=s.about;
@@ -58,7 +58,7 @@
    const app=getApps().length?getApps()[0]:initializeApp(config.firebase);
    const db=getFirestore(app);
    const snapshot=await getDocs(query(collection(db,"services"),where("active","==",true)));
-   const records=snapshot.docs.sort((a,b)=>(a.data().order||0)-(b.data().order||0));
+   const records=snapshot.docs.sort((a,b)=>(a.data().order||0)-(b.data().order||0)).slice(0,5);
    if(serviceCards&&records.length){
     serviceCards.replaceChildren();
     records.forEach((doc,index)=>{
