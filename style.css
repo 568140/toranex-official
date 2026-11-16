@@ -5,3 +5,5 @@
 .honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.contact-grid button:disabled{opacity:.55;cursor:wait}
 
 .brand-symbol{width:46px;height:46px;object-fit:contain;display:block}.foot-top .brand-symbol{width:43px;height:43px}@media(max-width:650px){.brand-symbol{width:40px;height:40px}}
+
+.footer-social{display:flex;gap:16px;justify-content:center;padding:10px 24px;font-size:10px;color:#d6b294}.footer-social a:hover{text-decoration:underline}
