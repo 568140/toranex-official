@@ -31,7 +31,12 @@ Supabase server settings: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_BUCK
 8. Remove TORANEX_BOOTSTRAP_SECRET from Vercel and redeploy immediately after successful bootstrap.
 9. Publish firestore.rules in Firebase Console → Firestore → Rules.
 
-## Initial content import\n- Open /admin.html after creating the owner account.\n- Use the import buttons in Projects and Services. The import skips existing project URLs and service names.\n- Ten project entries and six editable services are included in the repository as seed JSON files.\n\n## Supabase Storage
+## Initial content import
+- Open /admin.html after creating the owner account.
+- Use the import buttons in Projects and Services. The import skips existing project URLs and service names.
+- Ten project entries and six editable services are included in the repository as seed JSON files.
+
+## Supabase Storage
 1. Create a Storage bucket named toranex-media.
 2. Choose a public bucket only if the uploaded media is intended for public display.
 3. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY only to Vercel environment variables.
