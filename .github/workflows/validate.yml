@@ -1,0 +1,30 @@
+name: Validate TORANEX
+on:
+  push:
+    branches: [main, redesign/toranex-v2]
+  pull_request:
+    branches: [main]
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Check serverless API syntax
+        run: |
+          node --check lib/firebase-admin.js
+          node --check api/config.js
+          node --check api/contact.js
+          node --check api/admin.js
+          node --check api/bootstrap-owner.js
+      - name: Check browser module syntax
+        run: |
+          node --input-type=module --check < admin.js
+          node --input-type=module --check < project-catalog.js
+          node --input-type=module --check < site-content.js
+      - name: Validate JSON configuration and seed files
+        run: |
+          node -e "for (const f of ['package.json','vercel.json','projects.json','services.json']) JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('JSON files valid')"
