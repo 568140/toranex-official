@@ -1,0 +1,1 @@
+/* أضف إعدادات Firebase Web App العامة. لا تضع مفاتيح Admin SDK هنا. */window.TORANEX_FIREBASE_CONFIG={apiKey:"YOUR_FIREBASE_WEB_API_KEY",authDomain:"YOUR_PROJECT_ID.firebaseapp.com",projectId:"YOUR_PROJECT_ID",appId:"YOUR_FIREBASE_APP_ID"};
