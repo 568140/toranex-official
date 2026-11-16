@@ -1,0 +1,44 @@
+[
+  {
+    "name": "تطوير المواقع والمنصات",
+    "subtitle": "WEB & DIGITAL PRODUCTS",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "الأنظمة الإدارية ولوحات التحكم",
+    "subtitle": "BUSINESS SYSTEMS",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "الذكاء الاصطناعي والأتمتة",
+    "subtitle": "AI & AUTOMATION",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "تصميم الواجهات وتجربة المستخدم",
+    "subtitle": "UI / UX DESIGN",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "قواعد البيانات والتكاملات",
+    "subtitle": "DATABASES & API",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "الإطلاق والتحسين",
+    "subtitle": "DEPLOYMENT & SUPPORT",
+    "description": "خدمة تقنية من TORANEX للبرمجيات والتصميم.",
+    "order": 6,
+    "active": true
+  }
+]
