@@ -7,7 +7,7 @@ Arabic RTL website and portfolio for TORANEX Software & Design, founded by Tawfi
 - Editorial design: warm ivory, charcoal, forest green and muted copper.
 - Ten initial portfolio entries and Firestore live portfolio catalog.
 - Firebase email/password authentication with server-side Firebase Admin SDK authorization.
-- Admin modules: projects CRUD, services CRUD, contact inbox, company profile/social links, SEO settings, media library, audit log.
+- Admin modules: projects CRUD, services CRUD, contact inbox, company profile/social links, SEO settings, media library upload/delete, audit log, and seed import controls.
 - Contact form saved to Firestore with input validation, honeypot and per-IP rate limiting.
 - Supabase Storage uploads through a server endpoint; service-role key remains server-side.
 - Firestore rules deny browser-side writes.
@@ -31,7 +31,7 @@ Supabase server settings: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_BUCK
 8. Remove TORANEX_BOOTSTRAP_SECRET from Vercel and redeploy immediately after successful bootstrap.
 9. Publish firestore.rules in Firebase Console → Firestore → Rules.
 
-## Supabase Storage
+## Initial content import\n- Open /admin.html after creating the owner account.\n- Use the import buttons in Projects and Services. The import skips existing project URLs and service names.\n- Ten project entries and six editable services are included in the repository as seed JSON files.\n\n## Supabase Storage
 1. Create a Storage bucket named toranex-media.
 2. Choose a public bucket only if the uploaded media is intended for public display.
 3. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY only to Vercel environment variables.
@@ -49,5 +49,5 @@ admins/{uid}, projects/{id}, services/{id}, siteSettings/main, siteSettings/seo,
 ## Notes
 - No Firebase or Supabase secrets are committed to Git.
 - The owner bootstrap endpoint closes automatically after the first admin document exists.
-- The wordmark is still a text-based placeholder; replace it with the approved TORANEX logo artwork as an SVG/PNG repository asset before final brand release.
+- A scalable TORANEX ribbon emblem SVG is included at assets/toranex-mark.svg, based on a visual recreation of the supplied logo. Replace with the original master artwork if exact pixel-level reproduction is required.
 - Verify case-study details and project screenshots before publishing outcomes or client claims.
